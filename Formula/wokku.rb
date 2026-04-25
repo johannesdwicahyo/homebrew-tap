@@ -3,7 +3,7 @@ class Wokku < Formula
   homepage "https://wokku.cloud"
   url "https://raw.githubusercontent.com/johannesdwicahyo/wokku/main/cli/wokku"
   version "0.6.0"
-  sha256 "e8202a5ad19600a5659311fa7d7ecb8e689d66cae721254eb517a5bda8fd0884"
+  sha256 "f2422b434a38e0639541e16d2392b8a7c3bb8cb93ffc88eedcbab9050d0d0082"
   license "MIT"
 
   depends_on "ruby"
