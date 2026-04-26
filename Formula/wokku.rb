@@ -2,8 +2,8 @@ class Wokku < Formula
   desc "CLI for Wokku - deploy and manage apps on Dokku servers"
   homepage "https://wokku.cloud"
   url "https://raw.githubusercontent.com/johannesdwicahyo/wokku/main/cli/wokku"
-  version "1.5.0"
-  sha256 "f2422b434a38e0639541e16d2392b8a7c3bb8cb93ffc88eedcbab9050d0d0082"
+  version "1.6.0"
+  sha256 "dad7f579094fa4cf758b84ff3cca7acdf5123986abe72815212f7a255c6e3bb9"
   license "MIT"
 
   depends_on "ruby"
