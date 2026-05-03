@@ -1,15 +1,16 @@
 class Wokku < Formula
   desc "CLI for Wokku - deploy and manage apps on Dokku servers"
   homepage "https://wokku.cloud"
-  url "https://wokku.cloud/cli/wokku"
+  url "https://wokku.cloud/cli/wokku.tar.gz"
   version "2.0.0"
-  sha256 "0933429f8395795208fc575096f35108a999a07c3ef968e419c55f7244a55651"
+  sha256 "7b38c29cc3132a85f63dbc018586a370d10557c921efc6e4cb43a4bfe1655fcc"
   license "MIT"
 
   depends_on "ruby"
 
   def install
-    bin.install "wokku"
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"wokku"
   end
 
   test do
