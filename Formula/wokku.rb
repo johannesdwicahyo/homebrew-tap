@@ -1,19 +1,24 @@
 class Wokku < Formula
-  desc "CLI for Wokku - deploy and manage apps on Dokku servers"
-  homepage "https://wokku.cloud"
-  url "https://wokku.cloud/cli/wokku.tar.gz"
-  version "2.0.0"
-  sha256 "48ab102c424e4289d114852a8efe1172cb3699c040a28d051976ec6e5062380b"
+  desc "CLI for Wokku — deploy and manage apps on Dokku servers"
+  homepage "https://github.com/johannesdwicahyo/wokku-cli"
+  url "https://rubygems.org/downloads/wokku-cli-0.1.0.gem"
+  version "0.1.0"
+  sha256 "bf1f086c2d6a950a096f6bc516510b9c97b692346b6abb5d1dc4959f3d4cb10c"
   license "MIT"
 
   depends_on "ruby"
 
   def install
-    libexec.install Dir["*"]
-    bin.install_symlink libexec/"wokku"
+    ENV["GEM_HOME"] = libexec
+    system "gem", "install", cached_download,
+           "--no-document",
+           "--no-user-install",
+           "--install-dir", libexec
+    bin.install libexec/"bin/wokku"
+    bin.env_script_all_files(libexec/"bin", GEM_HOME: ENV["GEM_HOME"])
   end
 
   test do
-    assert_match "wokku", shell_output("#{bin}/wokku --help 2>&1", 0).downcase
+    assert_match "wokku/", shell_output("#{bin}/wokku version")
   end
 end
